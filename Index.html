@@ -1,4 +1,21 @@
-HTML
+
+Name: Chandana J 
+Course:BCA
+Email:chandu45625@gmail.com
+Current year:Final year BCA 
+GitHub link:GitHub.com/chandu45625-byte
+skills:Front End ,BackEnd,Flask,Node.js,HTML ,Css, javascript, Tailwind 
+project upcoming ideas: Stationary and Office Supply Store
+
+
+Give me portfolio code all in one code 
+With javascript and css 
+
+Give me in unique design something that relates to computer background like windows theme like windows 8 or 9
+
+And it should be responsive and interactive with dark and light theme 
+
+Give only the code
 
 <!DOCTYPE html>
 <html lang="en">
@@ -936,4 +953,322 @@ footer {
             <div class="section-heading">
                 <div class="eyebrow">What I'm planning</div>
                 <h2>Featured <span class="gradient-text">Project</span></h2>
-                <p>A future project idea that 
+                <p>A future project idea that combines web development with everyday needs.</p>
+            </div>
+
+            <div class="project-card">
+                <div class="project-art">
+                    <div>
+                        <span>🛍️</span>
+                        <h3>Digital Store Concept</h3>
+                        <p style="margin-top:10px;opacity:.85">A future full-stack project</p>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <div class="eyebrow">Upcoming project</div>
+                    <h3>Stationery & Office Supply Store</h3>
+                    <p>
+                        A planned online store where users can explore stationery
+                        products and office essentials. Future features may include
+                        product categories, search, a shopping cart, and an order
+                        management system.
+                    </p>
+                    <div class="tag-list">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Node.js / Flask</span>
+                    </div>
+                    <button class="btn btn-primary" id="projectInfo">View Project Idea ↗</button>
+                    <p id="projectMessage" style="margin-top:12px;display:none" aria-live="polite">
+                        This project is planned for future development and is not yet published.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-heading">
+                <div class="eyebrow">Let's connect</div>
+                <h2>Contact <span class="gradient-text">Me</span></h2>
+                <p>Have an idea, opportunity, or question? I'd love to hear from you.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="panel">
+                    <h3>📬 Contact Details</h3>
+                    <p>Connect with me through email or GitHub.</p>
+
+                    <div class="contact-item">
+                        <span class="emoji">✉️</span>
+                        <div>
+                            <small>Email address</small>
+                            <a href="mailto:chandu45625@gmail.com">chandu45625@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="emoji">🐙</span>
+                        <div>
+                            <small>GitHub profile</small>
+                            <a href="https://github.com/chandu45625-byte" target="_blank" rel="noopener noreferrer">github.com/chandu45625-byte ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>💌 Send a Message</h3>
+                    <p style="margin-bottom:20px">
+                        Fill in the details below to open an email draft.
+                    </p>
+
+                    <form id="contactForm">
+                        <input type="text" id="senderName" placeholder="Your name" aria-label="Your name" required maxlength="100">
+                        <input type="email" id="senderEmail" placeholder="Your email address" aria-label="Your email address" required maxlength="150">
+                        <input type="text" id="subject" placeholder="Subject" aria-label="Subject" required maxlength="150">
+                        <textarea id="message" placeholder="Write your message..." aria-label="Your message" required maxlength="3000"></textarea>
+                        <button type="submit" class="btn btn-primary">✉ Prepare Email</button>
+                        <p style="font-size:.8rem" id="formNote" aria-live="polite">
+                            Your email app will open. No message is sent automatically by this website.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© <span id="year"></span> Chandana J · Built with 💙 HTML, CSS & JavaScript</p>
+    <p style="margin-top:7px">Designed with a Windows-inspired desktop aesthetic.</p>
+</footer>
+
+<div class="taskbar">
+    <button class="start-btn" id="startBtn" aria-label="Show welcome message">
+        <span>⊞</span> Start
+    </button>
+    <div class="task-center">
+        <span>▦ Portfolio</span>
+        <span>💻 Developer Mode</span>
+    </div>
+    <div class="task-clock">
+        <div id="clock">--:--:--</div>
+        <div id="date">Loading...</div>
+    </div>
+</div>
+
+<button class="back-top" id="backTop" aria-label="Back to top" title="Back to top">↑</button>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+// Theme: remember the visitor's choice when browser storage is available.
+const body = document.body;
+const themeToggle = document.getElementById("themeToggle");
+
+try {
+    const savedTheme = localStorage.getItem("chandana-theme");
+    if (savedTheme === "dark") body.classList.add("dark");
+} catch (error) {
+    // The site still works if browser storage is unavailable.
+}
+
+function updateThemeButton() {
+    const isDark = body.classList.contains("dark");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    themeToggle.title = isDark ? "Switch to light theme" : "Switch to dark theme";
+    themeToggle.setAttribute("aria-label", themeToggle.title);
+}
+
+updateThemeButton();
+
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    try {
+        localStorage.setItem(
+            "chandana-theme",
+            body.classList.contains("dark") ? "dark" : "light"
+        );
+    } catch (error) {
+        // Theme switching still works for this page.
+    }
+
+    updateThemeButton();
+});
+
+// Responsive navigation.
+const menuToggle = document.getElementById("menuToggle");
+const navigation = document.getElementById("navigation");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+});
+
+navigation.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navigation.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+    });
+});
+
+// Windows-inspired clock and date.
+function updateClock() {
+    const now = new Date();
+
+    document.getElementById("clock").textContent =
+        now.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
+
+    document.getElementById("date").textContent =
+        now.toLocaleDateString([], {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        });
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Small interactive notifications.
+const toast = document.getElementById("toast");
+let toastTimeout;
+
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(toastTimeout);
+    toastTimeout = setTimeout(() => {
+        toast.classList.remove("show");
+    }, 2800);
+}
+
+document.getElementById("startBtn").addEventListener("click", () => {
+    showToast("Welcome to Chandana J's developer portfolio! 💙");
+});
+
+// Upcoming project details.
+document.getElementById("projectInfo").addEventListener("click", () => {
+    const message = document.getElementById("projectMessage");
+    const isVisible = message.style.display === "block";
+
+    message.style.display = isVisible ? "none" : "block";
+    document.getElementById("projectInfo").textContent =
+        isVisible ? "View Project Idea ↗" : "Hide Project Details ↑";
+});
+
+// Contact form: prepare an email in the visitor's email application.
+document.getElementById("contactForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = document.getElementById("senderName").value.trim();
+    const email = document.getElementById("senderEmail").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+        showToast("Please complete all fields.");
+        return;
+    }
+
+    const recipient = "chandu45625@gmail.com";
+    const mailSubject = encodeURIComponent(subject);
+    const mailBody = encodeURIComponent(
+        "From: " + name + "\n" +
+        "Reply email: " + email + "\n\n" +
+        message
+    );
+
+    document.getElementById("formNote").textContent =
+        "Your email application should open with the message prepared.";
+
+    window.location.href =
+        "mailto:" + recipient +
+        "?subject=" + mailSubject +
+        "&body=" + mailBody;
+});
+
+// Back-to-top button.
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", () => {
+    backTop.classList.toggle("show", window.scrollY > 350);
+}, { passive: true });
+
+backTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+
+</body>
+</html>
+
+It's not copied
+No problem 😊 Chandana! You can copy the full portfolio code using the button below.
+
+Portfolio code — HTML + CSS + JavaScript
+
+Includes Windows-style design, dark/light mode, responsive layout, skills, projects, and contact form.
+
+To copy the actual code on your Android phone:
+
+Scroll up to my previous message containing the code.
+
+Tap and hold the code block, or tap its Copy icon if visible.
+
+Open your GitHub repository.
+
+Open index.html and paste the code.
+
+If you cannot see a Copy icon, I can give you the code in smaller parts so you can copy it easily on your phone.
+
+Give
+Chandana 😊 Let's do it in small parts so you can copy the code easily on your phone. We will use one index.html file with HTML, CSS, and JavaScript together.
+
+Part 1: HTML + CSS
+Copy this code first. It includes the Windows-inspired design, responsive layout, and dark/light theme.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chandana J | Portfolio</title
+
+Okk
+Okay, Chandana 😊💙
+
+We have completed Part 1 of your Windows-style portfolio.
+
+Next, I’ll give you Part 2, which includes:
+
+Your About Me section
+
+Technical skills
+
+Stationery and Office Supply Store project
+
+Contact form
+
+JavaScript for dark/light mode and interactivity
+
+First, copy Part 1 into your index.html file. Then tell me Next.
+
+
+
+
